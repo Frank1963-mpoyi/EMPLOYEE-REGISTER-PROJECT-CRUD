@@ -1,0 +1,55 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{% block title %} Title {% endblock title %} | CRUD PROJECT</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- Local Style -->
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+
+    <div class="container">
+        <div class="col-md-10 offset-md mt-5">
+            <div class="jumbotron">
+                <h1 class="display-5 text-center">Employee Register</h1>
+                <p class="lead font-italic text-center">CRUD Project</p>
+                <hr class="my-4">
+                {% block content %}
+
+                {%  endblock content %}
+            </div>
+        </div>  
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Local Js -->
+    <script src="{% static 'blog/app.js' %}"></script>
+
+</body>
+
+</html>

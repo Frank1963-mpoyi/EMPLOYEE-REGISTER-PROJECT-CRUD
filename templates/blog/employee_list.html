@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} RETRIEVE VIEW {% endblock title %}
+
+
+
+{% block content %}
+    <table class="table table-borderless">
+        <thead class="border-bottom font-weight-bold">
+            <tr>
+                <td>Full Name</td>
+                <td>Mobile</td>
+                <td>Position</td>       
+                <td>
+                    <a href="{% url 'blog:form'  %}" class="btn btn-success  " >
+                        <i class="fas fa-plus mr-2"></i>Add New
+                    </a>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employee_list %}
+            <tr>
+                <td>{{employee.fullname}}</td>
+                <td>{{employee.mobile}}</td>
+                <td>{{employee.position}}</td>
+                <td>
+                    <a href="{% url 'blog:update' employee.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <!-- Form for delete operation -->
+                    <form action="{% url 'blog:delete'  employee.id %}" method="post" class="d-inline" >
+                        {% csrf_token %}
+                            <button type="submit" class="btn">
+                                <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                            </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+
+{%  endblock content %}
