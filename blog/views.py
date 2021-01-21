@@ -30,9 +30,9 @@ def employee_form (request):
         
         
     
-def updat_form (request, pk=None):
+def updat_form (request, slug=None):
     template_name = 'blog/employee_form.html'
-    obj     = get_object_or_404(Employee, id=pk)
+    obj     = get_object_or_404(Employee, slug=slug)
     form    = EmployeeForm(request.POST or None , instance=obj)
     if form.is_valid():
             form.save()

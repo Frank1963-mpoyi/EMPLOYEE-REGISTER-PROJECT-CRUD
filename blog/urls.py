@@ -16,7 +16,7 @@ urlpatterns = [
     
     path('',                    employee_list,      name='list'  ),
     path('form',                employee_form,      name='form'  ),
-    path('<int:pk>',            updat_form,         name='update'),
-    path('<int:pk>/delete',     employee_delete,    name='delete'),
+    path('<str:slug>',            updat_form,         name='update'),
+    path('<str:slug>/delete',     employee_delete,    name='delete'),
 
 ]
