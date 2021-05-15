@@ -5,15 +5,30 @@
 
 
 {% block content %}
-    <table class="table table-borderless">
+<style>
+
+@media only screen and (max-width: 600px) {
+
+    .media_query{
+        width: 150px;
+
+    }
+
+}
+
+</style>
+
+
+<div class="container">
+    <table class="table  table-hover table-responsive">
         <thead class="border-bottom font-weight-bold">
             <tr>
                 <td>Full Name</td>
                 <td>Mobile</td>
                 <td>Position</td>       
                 <td>
-                    <a href="{% url 'blog:form'  %}" class="btn btn-success  " >
-                        <i class="fas fa-plus mr-2"></i>Add New
+                    <a href="{% url 'blog:form'  %}" class="btn btn-success  media_query" >
+                        <i class="fas fa-plus mr-2"></i> Add New
                     </a>
                 </td>
             </tr>
@@ -39,8 +54,10 @@
             </tr>
             {% endfor %}
         </tbody>
-
     </table>
+
+</div>
+
 
 
 {%  endblock content %}
