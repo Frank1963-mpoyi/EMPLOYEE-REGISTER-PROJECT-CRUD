@@ -6,7 +6,7 @@ from        .base               import *
 DEBUG               = config('DEBUG')
 
 
-ALLOWED_HOSTS       = []
+ALLOWED_HOSTS       = ['localhost', 'lys-business.herokuapp.com']
 
 
 
