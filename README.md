@@ -15,7 +15,7 @@ steps:
         * pip install pipenv
 
 
-    3. install the requirements located in requirements_dev.txt in requirements directory
+    3. install the requirements located in requirements.txt in requirements file's root directory 
 
 
     4. create a postgres database on your local environement or Database Server.
