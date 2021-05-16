@@ -28,6 +28,7 @@
                         <td>Full Name</td>
                         <td>Mobile</td>
                         <td>Position</td>       
+                        <td>Code</td>       
                         <td>
                             <a href="{% url 'blog:form'  %}" class="btn btn-success  media_query" >
                                 <i class="fas fa-plus mr-2"></i> Add New
@@ -41,6 +42,7 @@
                         <td>{{employee.fullname}}</td>
                         <td>{{employee.mobile}}</td>
                         <td>{{employee.position}}</td>
+                        <td>{{employee.empl_code}}</td>
                         <td>
                             <a href="{{ employee.get_absolute_url }}" class="btn text-secondary px-0">
                                 <i class="far fa-edit fa-lg"></i>
