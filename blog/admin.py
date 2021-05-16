@@ -9,3 +9,5 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 
 
+admin.site.register(Position)
+
