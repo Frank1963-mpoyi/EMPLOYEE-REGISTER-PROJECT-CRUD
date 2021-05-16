@@ -7,7 +7,6 @@ urlpatterns = [
     
     path('',        include    ('blog.urls',     namespace="blog")),
     
-    path('admin/',             admin.site.urls),
     
     
 ]
@@ -19,6 +18,7 @@ if settings.DEBUG:
     
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
+        path('admin-site/',  admin.site.urls),
         ]+urlpatterns
 
 
