@@ -1,4 +1,4 @@
-import      configparser
+
 
 from        .base               import *
 
@@ -21,29 +21,6 @@ MIDDLEWARE += [
 
 
 
-CONFIG_DIR = os.path.join(BASE_DIR, 'config/')
-
-parser = configparser.ConfigParser()
-parser.read_file(open(os.path.join(CONFIG_DIR, 'app.ini')))
-
-DATABASES = {}
-
-
-#Done with postgresql 
-DATABASES = {
-    'default': {
-        'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
-        'NAME'      : parser.get('crud', 'name'),
-        'USER'      : parser.get('crud', 'user'),
-        'PASSWORD'  : parser.get('crud', 'password'),
-        'HOST'      : parser.get('crud', 'host') or '127.0.0.1',
-        'PORT'      : parser.getint('crud', 'port') or '5432',
-
-    }
-}
-
-
-
 # Tried with Sqlite3 database
 DATABASES = {
     'default': {
@@ -52,6 +29,20 @@ DATABASES = {
     }
 }
 
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':         config('DB_NAME'),
+#         'USER':         config('DB_USER'),
+#         'PASSWORD':     config('DB_PASSWORD'),
+#         'HOST':         config('DB_HOST'),
+#         'PORT':         config('DB_PORT') 
+#     }
+
+# }
 
 
 #DEBUG TOOLBAR SETTINGS

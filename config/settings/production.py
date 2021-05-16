@@ -6,7 +6,7 @@ from        .base               import *
 DEBUG               = config('DEBUG')
 
 
-ALLOWED_HOSTS       = ['*']
+ALLOWED_HOSTS       = []
 
 
 
@@ -40,19 +40,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 
-
-#DATABASES['default'] =  dj_database_url.config()
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':         config('DB_NAME'),
-        'USER':         config('DB_USER'),
-        'PASSWORD':     config('DB_PASSWORD'),
-        'HOST':         config('DB_HOST'),
-        'PORT':         config('DB_PORT') 
-    }
-
-}
 
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)

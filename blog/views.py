@@ -36,7 +36,7 @@ def updat_form (request, slug=None):
     form    = EmployeeForm(request.POST or None , instance=obj)
     if form.is_valid():
             form.save()
-            return redirect(employee_list)
+            return redirect('blog:list')
     context =  {'form': form }
     return render (request, template_name, context )
 

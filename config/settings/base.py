@@ -1,7 +1,7 @@
 
-import os
-from   decouple     import      config
-
+import      os
+from        decouple     import      config
+import      configparser
 
 
 
@@ -19,8 +19,6 @@ BASE_DIR = os.path.dirname(
 SECRET_KEY = config('SECRET_KEY')
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,6 +55,34 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+
+CONFIG_DIR = os.path.join(BASE_DIR, 'config/')
+
+parser = configparser.ConfigParser()
+parser.read_file(open(os.path.join(CONFIG_DIR, 'app.ini')))
+
+
+
+DATABASES = {}
+
+#Done with postgresql 
+DATABASES = {
+    'default': {
+        'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
+        'NAME'      : parser.get('crud', 'name'),
+        'USER'      : parser.get('crud', 'user'),
+        'PASSWORD'  : parser.get('crud', 'password'),
+        'HOST'      : parser.get('crud', 'host') or '127.0.0.1',
+        'PORT'      : parser.getint('crud', 'port') or '5432',
+
+    }
+}
+
+
+
+
+
 
 TEMPLATES = [
     {
