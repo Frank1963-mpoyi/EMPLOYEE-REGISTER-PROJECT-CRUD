@@ -1,49 +1,35 @@
-
-
 from        .base               import *
-
-
-
 
 
 DEBUG = True
 
-
 INSTALLED_APPS += [
     'debug_toolbar',
-
 ]
 
 MIDDLEWARE += [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-
-
-
 # Tried with Sqlite3 database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME':         config('DB_NAME'),
-#         'USER':         config('DB_USER'),
-#         'PASSWORD':     config('DB_PASSWORD'),
-#         'HOST':         config('DB_HOST'),
-#         'PORT':         config('DB_PORT') 
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
-
 # }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':         config('DB_NAME'),
+        'USER':         config('DB_USER'),
+        'PASSWORD':     config('DB_PASSWORD'),
+        'HOST':         config('DB_HOST'),
+        'PORT':         config('DB_PORT')
+    }
+
+}
 
 #DEBUG TOOLBAR SETTINGS
 DEBUG_TOOLBAR_PANELS = [
@@ -70,8 +56,6 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK' : show_toolbar,
 }
 
-
-
 ENVIRONMENT = 'DEVELOPMENT'
 
 print("\n")
@@ -81,5 +65,3 @@ print("TEMPLATES    = ", TEMPLATES[0]['DIRS'])
 print("STATIC_ROOT  = ", STATIC_ROOT)
 print("MEDIA_ROOT   = ", MEDIA_ROOT)
 print("\n")
-
-

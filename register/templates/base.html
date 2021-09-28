@@ -1,0 +1,44 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+    <head>
+        {% include  'includes/head_link.html'  %}
+
+        {% block extra_head %}
+
+        {% endblock  %}
+    </head>
+
+    <body>
+
+        {% include 'includes/navbar.html'   with brand_name="Lys Business LTD" %}
+
+        {% include 'includes/message.html'  %}
+
+        <div class="container-fluid">
+            <div class="col-md-12 mx-auto mt-5">
+                <div class="jumbotron">
+                    <h1 class="display-5 text-center">Employee Register</h1>
+                    <p class="lead font-italic text-center">CRUD Project</p>
+                    <hr class="my-4">
+                    {% block content %}
+
+                    {%  endblock content %}
+
+                    <!-- extra body -->
+                    {% block extra_body %}
+
+                    {% endblock  %}
+
+                </div>
+            </div>
+        </div>
+
+        {% include  'includes/footer.html' %}
+
+        {% include   'includes/script.html' %}
+
+    </body>
+
+</html>

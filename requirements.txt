@@ -76,7 +76,7 @@ pylint-plugin-utils==0.6
 pyluach==1.2.1
 pyppeteer==0.2.2
 pyquery==1.4.3
-python-dateutil==1.5
+python-dateutil==2.6.0
 python-decouple==3.3
 python-dotenv==0.14.0
 python3-openid==3.2.0
